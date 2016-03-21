@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
+protocol TableViewCellRepresentationProtocol {
+    func tableView(tableView: UITableView, representationAsCellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell
+}

@@ -14,14 +14,8 @@ class Name: NSObject, TableViewCellRepresentationProtocol{
     // MARK: - TableViewCellRepresentationProtocol
     func tableView(tableView: UITableView, representationAsCellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //adjust class cell representation according to indexPath (probably not necessary if cell for this class should always look the same)
-        var cell = UITableViewCell()
-        if indexPath.row == 0 || indexPath.row == 2 {
-            cell = BasicTableViewCell()
-            cell.textLabel?.text = name + " - Basic"
-        } else if indexPath.row == 1 {
-            cell = RightDetailTableViewCell()
-            cell.textLabel?.text = name + " - RightDetail"
-        }
+        let cell = BasicTableViewCell()
+        cell.textLabel?.text = name
         return cell
     }
     

@@ -30,16 +30,10 @@ class ViewController: UIViewController {
     func prepareTableViewData() {
         /**
         *   Use this method to kinda built some "stack" of views
-        *   e.g. this one displays 3 Name objects followed by 3 PhoneNumber Objects
+        *   e.g. this one displays names of the great houses in Game of Thrones followed by some known persons
+        *   This stack process can be reviewed in the ModelCreator Helper class -> rid this controller of "fat" code
         */
-        let data = NSMutableArray()
-        data.addObject(Name(name: "Benjin"))
-        data.addObject(Name(name: "Eddard"))
-        data.addObject(Name(name: "Brandon"))
-        data.addObject(PhoneNumber(number: "+490123456789"))
-        data.addObject(PhoneNumber(number: "+491111111111"))
-        data.addObject(PhoneNumber(number: "+492222222222"))
-        
+        let data = ModelCreator.createModel()
         self.dataSource.data = data
     }
 

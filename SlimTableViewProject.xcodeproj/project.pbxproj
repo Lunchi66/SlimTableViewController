@@ -21,7 +21,8 @@
 		5FB706231CA05DBE0058B181 /* TableViewCellRepresentationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB706221CA05DBE0058B181 /* TableViewCellRepresentationProtocol.swift */; };
 		5FB706261CA086310058B181 /* RightDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB706251CA086310058B181 /* RightDetailTableViewCell.swift */; };
 		5FB706281CA0864A0058B181 /* LabelRightImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB706271CA0864A0058B181 /* LabelRightImageTableViewCell.swift */; };
-		5FB7062C1CA08F560058B181 /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB7062B1CA08F560058B181 /* PhoneNumber.swift */; };
+		5FB7062C1CA08F560058B181 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB7062B1CA08F560058B181 /* House.swift */; };
+		5FB7062E1CA099F40058B181 /* ModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB7062D1CA099F40058B181 /* ModelCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +42,8 @@
 		5FB706221CA05DBE0058B181 /* TableViewCellRepresentationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellRepresentationProtocol.swift; sourceTree = "<group>"; };
 		5FB706251CA086310058B181 /* RightDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightDetailTableViewCell.swift; sourceTree = "<group>"; };
 		5FB706271CA0864A0058B181 /* LabelRightImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelRightImageTableViewCell.swift; sourceTree = "<group>"; };
-		5FB7062B1CA08F560058B181 /* PhoneNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
+		5FB7062B1CA08F560058B181 /* House.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		5FB7062D1CA099F40058B181 /* ModelCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +126,7 @@
 		5FB706191CA0529B0058B181 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				5FB7061A1CA052B70058B181 /* MasterTableViewSourceDelegate.swift */,
-				5FB706221CA05DBE0058B181 /* TableViewCellRepresentationProtocol.swift */,
+				5FB7062D1CA099F40058B181 /* ModelCreator.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -142,8 +143,10 @@
 		5FB7061F1CA05CC50058B181 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5FB706301CA09CA60058B181 /* Protocols */,
+				5FB7062F1CA09C9A0058B181 /* Master */,
 				5FB706201CA05CDB0058B181 /* Name.swift */,
-				5FB7062B1CA08F560058B181 /* PhoneNumber.swift */,
+				5FB7062B1CA08F560058B181 /* House.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -164,6 +167,22 @@
 				5FB706111CA0518A0058B181 /* RightDetailTableViewCell.xib */,
 			);
 			name = RightDetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		5FB7062F1CA09C9A0058B181 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				5FB7061A1CA052B70058B181 /* MasterTableViewSourceDelegate.swift */,
+			);
+			name = Master;
+			sourceTree = "<group>";
+		};
+		5FB706301CA09CA60058B181 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5FB706221CA05DBE0058B181 /* TableViewCellRepresentationProtocol.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,9 +259,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB7062E1CA099F40058B181 /* ModelCreator.swift in Sources */,
 				5FB7061D1CA05BB80058B181 /* BasicTableViewCell.swift in Sources */,
 				5FB7061B1CA052B70058B181 /* MasterTableViewSourceDelegate.swift in Sources */,
-				5FB7062C1CA08F560058B181 /* PhoneNumber.swift in Sources */,
+				5FB7062C1CA08F560058B181 /* House.swift in Sources */,
 				5FB706231CA05DBE0058B181 /* TableViewCellRepresentationProtocol.swift in Sources */,
 				5FB706001CA04F3D0058B181 /* ViewController.swift in Sources */,
 				5FB706261CA086310058B181 /* RightDetailTableViewCell.swift in Sources */,
@@ -398,6 +418,7 @@
 				5FB7060E1CA04F3D0058B181 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

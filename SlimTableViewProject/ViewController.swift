@@ -26,15 +26,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    //GET FROM MODEL!?
+    // Warning: - Probably get this from the model
     func prepareTableViewData() {
-        var data = NSMutableArray()
-        let name1 = Name(name: "Benjin")
-        let name2 = Name(name: "Eddard")
-        let name3 = Name(name: "Brandon")
-        data.addObject(name1)
-        data.addObject(name2)
-        data.addObject(name3)
+        /**
+        *   Use this method to kinda built some "stack" of views
+        *   e.g. this one displays 3 Name objects followed by 3 PhoneNumber Objects
+        */
+        let data = NSMutableArray()
+        data.addObject(Name(name: "Benjin"))
+        data.addObject(Name(name: "Eddard"))
+        data.addObject(Name(name: "Brandon"))
+        data.addObject(PhoneNumber(number: "+490123456789"))
+        data.addObject(PhoneNumber(number: "+491111111111"))
+        data.addObject(PhoneNumber(number: "+492222222222"))
+        
         self.dataSource.data = data
     }
 

@@ -9,30 +9,22 @@
 import Foundation
 import UIKit
 class PhoneNumber: NSObject, TableViewCellRepresentationProtocol{
-    var number: String = ""
+    var number: String
     
     // MARK: - TableViewCellRepresentationProtocol
     func tableView(tableView: UITableView, representationAsCellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        //adjust class cell representation according to indexPath (probably not necessary if cell for this class should always look the same)
-        var cell = UITableViewCell()
-        if indexPath.row == 0 || indexPath.row == 2 {
-            cell = BasicTableViewCell()
-            cell.textLabel?.text = number + " - Basic"
-        } else if indexPath.row == 1 {
-            cell = RightDetailTableViewCell()
-            cell.textLabel?.text = number + " - RightDetail"
-        }
+        let cell = BasicTableViewCell()
+        cell.textLabel?.text = number
         return cell
     }
     
     // MARK: - Initializer
     override init() {
-        self.number = "No One"
+        self.number = "666"
         super.init()
     }
-    init(name:String) {
-        self.number = name
+    init(number:String) {
+        self.number = number
         super.init()
     }
 }

@@ -9,40 +9,48 @@
 import Foundation
 
 class ModelCreator: NSObject {
-    class func createModel() -> NSMutableArray {
-        let data = NSMutableArray()
-        data.addObject(House(name: "Stark", withWords: "Winter is Coming"))
-        data.addObject(Name(name: "Eddard Stark"))
-        data.addObject(Name(name: "Catelyn Stark"))
-        data.addObject(Name(name: "Robb Stark"))
-        data.addObject(Name(name: "Brandon Stark"))
-        data.addObject(Name(name: "Rickon Stark"))
-        data.addObject(Name(name: "Sansa Stark"))
-        data.addObject(Name(name: "Arya Stark"))
+    
+    /**
+     * Create model strongly based on OOP
+     */
+    class func createModel() {
+        let model = Model.sharedModel
         
-        data.addObject(House(name: "Baratheon", withWords: "Ours is the Fury"))
-        data.addObject(Name(name: "Robert Baratheon"))
-        data.addObject(Name(name: "Joffrey Baratheon"))
-        data.addObject(Name(name: "Tommen Baratheon"))
-        data.addObject(Name(name: "Myrcella Baratheon"))
-        data.addObject(Name(name: "Stannis Baratheon"))
-        data.addObject(Name(name: "Renly Baratheon"))
+        let stark = House(name: "Stark", withWords: "Winter is Coming")
+        let baratheon = House(name: "Baratheon", withWords: "Ours is the Fury")
+        let lannister = House(name: "Lannister", withWords: "Hear Me Roar!")
+        let targaryen = House(name: "Targaryen", withWords: "Fire and Blood")
         
-        data.addObject(House(name: "Lannister", withWords: "Hear Me Roar!"))
-        data.addObject(Name(name: "Tywin Lannister"))
-        data.addObject(Name(name: "Jamie Lannister"))
-        data.addObject(Name(name: "Cersei Lannister"))
-        data.addObject(Name(name: "Tyrion Lannister"))
-        data.addObject(Name(name: "Kevan Lannister"))
-        data.addObject(Name(name: "Lancel Lannister"))
+        model.houses.append(stark)
+        model.persons.append(Person(name: "Eddard", house: stark))
+        model.persons.append(Person(name: "Catelyn", house: stark))
+        model.persons.append(Person(name: "Robb", house: stark))
+        model.persons.append(Person(name: "Brandon", house: stark))
+        model.persons.append(Person(name: "Rickon", house: stark))
+        model.persons.append(Person(name: "Sansa", house: stark))
+        model.persons.append(Person(name: "Arya", house: stark))
         
-        data.addObject(House(name: "Targaryen", withWords: "Fire and Blood"))
-        data.addObject(Name(name: "Daenerys Targaryen"))
-        data.addObject(Name(name: "Rhaegar Targaryen"))
-        data.addObject(Name(name: "Viserys Targaryen"))
-        data.addObject(Name(name: "Aemon Targaryen"))
-        data.addObject(Name(name: "Maegor Targaryen"))
+        model.houses.append(baratheon)
+        model.persons.append(Person(name: "Robert", house: baratheon))
+        model.persons.append(Person(name: "Joffrey", house: baratheon))
+        model.persons.append(Person(name: "Tommen", house: baratheon))
+        model.persons.append(Person(name: "Myrcella", house: baratheon))
+        model.persons.append(Person(name: "Stannis", house: baratheon))
+        model.persons.append(Person(name: "Renly", house: baratheon))
         
-        return data
+        model.houses.append(lannister)
+        model.persons.append(Person(name: "Tywin", house: lannister))
+        model.persons.append(Person(name: "Jamie", house: lannister))
+        model.persons.append(Person(name: "Cersei", house: lannister))
+        model.persons.append(Person(name: "Tyrion", house: lannister))
+        model.persons.append(Person(name: "Kevan", house: lannister))
+        model.persons.append(Person(name: "Lancel", house: lannister))
+        
+        model.houses.append(targaryen)
+        model.persons.append(Person(name: "Daenerys", house: targaryen))
+        model.persons.append(Person(name: "Rhaegar", house: targaryen))
+        model.persons.append(Person(name: "Viserys", house: targaryen))
+        model.persons.append(Person(name: "Aemon", house: targaryen))
+        model.persons.append(Person(name: "Maegor", house: targaryen))
     }
 }

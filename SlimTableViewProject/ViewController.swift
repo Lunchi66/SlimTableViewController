@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let dataSource = MasterTableViewSourceDelegate()
+    let dataSource = ViewControllerTableViewSourceDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,12 @@ class ViewController: UIViewController {
         *   e.g. this one displays names of the great houses in Game of Thrones followed by some known persons
         *   This stack process can be reviewed in the ModelCreator Helper class -> rid this controller of "fat" code
         */
-        let data = ModelCreator.createModel()
-        self.dataSource.data = data
+        
+        //Create some Model to display content
+        ModelCreator.createModel()
+        
+        //Necessary!
+        self.dataSource.data = NSMutableArray(array: Model.sharedModel.persons)
     }
 
 }

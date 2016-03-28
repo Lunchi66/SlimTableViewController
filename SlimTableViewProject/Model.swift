@@ -41,7 +41,6 @@ class Model: NSObject {
         var names: [Person] = []
         for person in persons{
             if person.house.name == house.name {
-                print("Person found: \(person.name) for house: \(house.name)")
                 names.append(person)
             }
         }

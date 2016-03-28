@@ -29,9 +29,9 @@ class ViewController: UIViewController {
     // Warning: - Probably get this from the model
     func prepareTableViewData() {
         /**
-        *   Use this method to kinda built some "stack" of views
-        *   e.g. this one displays names of the great houses in Game of Thrones followed by some known persons
-        *   This stack process can be reviewed in the ModelCreator Helper class -> rid this controller of "fat" code
+        *   Use this method to built some "stack" of views
+        *   e.g. display characters in GoT (what a wonderful idea =) )
+        *   This stack process can be reviewed in the ModelCreator Helper class
         */
         
         //Create some Model to display content

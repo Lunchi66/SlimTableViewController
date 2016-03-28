@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let dataSource = MasterTableViewSourceDelegate()
+    let dataSource = ViewControllerTableViewSourceDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +26,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    //GET FROM MODEL!?
+    // Warning: - Probably get this from the model
     func prepareTableViewData() {
-        var data = NSMutableArray()
-        let name1 = Name(name: "Benjin")
-        let name2 = Name(name: "Eddard")
-        let name3 = Name(name: "Brandon")
-        data.addObject(name1)
-        data.addObject(name2)
-        data.addObject(name3)
-        self.dataSource.data = data
+        /**
+        *   Use this method to built some "stack" of views
+        *   e.g. display characters in GoT (what a wonderful idea =) )
+        *   This stack process can be reviewed in the ModelCreator Helper class
+        */
+        
+        //Create some Model to display content
+        ModelCreator.createModel()
+        
+        //Necessary!
+        self.dataSource.data = NSMutableArray(array: Model.sharedModel.persons)
     }
 
 }

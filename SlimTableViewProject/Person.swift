@@ -8,30 +8,27 @@
 
 import Foundation
 import UIKit
-class Name: NSObject, TableViewCellRepresentationProtocol{
-    var name: String = ""
+class Person: NSObject, TableViewCellRepresentationProtocol{
+    var name: String
+    var house: House
     
     // MARK: - TableViewCellRepresentationProtocol
     func tableView(tableView: UITableView, representationAsCellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         //adjust class cell representation according to indexPath (probably not necessary if cell for this class should always look the same)
-        var cell = UITableViewCell()
-        if indexPath.row == 0 || indexPath.row == 2 {
-            cell = BasicTableViewCell()
-            cell.textLabel?.text = name + " - Basic"
-        } else if indexPath.row == 1 {
-            cell = RightDetailTableViewCell()
-            cell.textLabel?.text = name + " - RightDetail"
-        }
+        let cell = BasicTableViewCell()
+        cell.textLabel?.text = name + " " + house.name
         return cell
     }
     
     // MARK: - Initializer
     override init() {
         self.name = "No One"
+        self.house = House(name: "House of Black & White", withWords: "Valar Morghulis")
         super.init()
     }
-    init(name:String) {
+    init(name:String, house:House) {
         self.name = name
+        self.house = house
         super.init()
     }
 }

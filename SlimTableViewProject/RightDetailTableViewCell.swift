@@ -9,5 +9,8 @@
 import Foundation
 import UIKit
 class RightDetailTableViewCell : UITableViewCell {
-    
+    override func awakeFromNib() {
+        self.textLabel?.text = ""
+        self.detailTextLabel?.text = "TEST"
+    }
 }

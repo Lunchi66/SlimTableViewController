@@ -11,17 +11,25 @@ import UIKit
 
 class MasterTableViewSourceDelegate: NSObject, UITableViewDataSource, UITableViewDelegate{
 
-    //needs to be set
+    /**
+     * The data to display in the tableView
+     */
     var data: NSMutableArray?
     
+    /**
+     * Return the object that should be displayed at the given indexPath - this basic scenario asumes there is only one section
+     */
     func tableView(tableView: UITableView, representedObjectAtIndexPath indexPath:NSIndexPath) -> AnyObject {
         if let item = data?[indexPath.section + indexPath.row] {
             return item
         }
         print("Unknown Section, return No One")
-        return Name()
+        
+        //Some basic error case object needs to be returned
+        return Person()
         
     }
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let object = self.tableView(tableView, representedObjectAtIndexPath: indexPath)
@@ -32,14 +40,13 @@ class MasterTableViewSourceDelegate: NSObject, UITableViewDataSource, UITableVie
             return UITableViewCell()
         }
     }
-    
-    //NOT viable yet
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let size = data?.count {
             return size
         }
         else {
-            print("data was null")
+            print("data was nil")
             return 0
         }
     }

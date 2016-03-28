@@ -17,14 +17,16 @@ class MasterTableViewSourceDelegate: NSObject, UITableViewDataSource, UITableVie
     var data: NSMutableArray?
     
     /**
-     * Return the object that should be displayed at the given indexPath
+     * Return the object that should be displayed at the given indexPath - this basic scenario asumes there is only one section
      */
     func tableView(tableView: UITableView, representedObjectAtIndexPath indexPath:NSIndexPath) -> AnyObject {
         if let item = data?[indexPath.section + indexPath.row] {
             return item
         }
         print("Unknown Section, return No One")
-        return Name()
+        
+        //Some basic error case object needs to be returned
+        return Person()
         
     }
     
